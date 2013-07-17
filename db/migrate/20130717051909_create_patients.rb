@@ -31,7 +31,8 @@ class CreatePatients < ActiveRecord::Migration
       t.string :disease_history
       t.string :heredopathia_history
       t.string :health_risk_factor
-      t.booleanhandicap_card_number :is_handicapped
+      t.boolean :is_handicapped
+      t.string :handicap_card_number
 
       t.timestamps
     end

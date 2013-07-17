@@ -34,6 +34,7 @@
       <th>Heredopathia history</th>
       <th>Health risk factor</th>
       <th>Is handicapped</th>
+      <th>Handicap card number</th>
       <th></th>
       <th></th>
       <th></th>
@@ -74,6 +75,7 @@
         <td><%= patient.heredopathia_history %></td>
         <td><%= patient.health_risk_factor %></td>
         <td><%= patient.is_handicapped %></td>
+        <td><%= patient.handicap_card_number %></td>
         <td><%= link_to 'Show', patient %></td>
         <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
         <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>

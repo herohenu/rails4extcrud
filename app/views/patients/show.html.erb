@@ -155,5 +155,10 @@
   <%= @patient.is_handicapped %>
 </p>
 
+<p>
+  <strong>Handicap card number:</strong>
+  <%= @patient.handicap_card_number %>
+</p>
+
 <%= link_to 'Edit', edit_patient_path(@patient) %> |
 <%= link_to 'Back', patients_path %>

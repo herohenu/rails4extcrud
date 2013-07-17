@@ -31,7 +31,8 @@ one:
   disease_history: MyString
   heredopathia_history: MyString
   health_risk_factor: MyString
-  is_handicapped: 
+  is_handicapped: false
+  handicap_card_number: MyString
 
 two:
   patient_ids: MyString
@@ -64,4 +65,5 @@ two:
   disease_history: MyString
   heredopathia_history: MyString
   health_risk_factor: MyString
-  is_handicapped: 
+  is_handicapped: false
+  handicap_card_number: MyString

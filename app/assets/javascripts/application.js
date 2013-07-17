@@ -18,7 +18,7 @@
 // require pageindex
 
 //= require app/model/User
-// require  app/data/users.json
+// require  app/data/users.json                              l
 //= require app/store/Users
 
 //= require app/view/user/List

@@ -133,7 +133,11 @@
   </div>
   <div class="field">
     <%= f.label :is_handicapped %><br>
-    <%= f.text_field :is_handicapped %>
+    <%= f.check_box :is_handicapped %>
+  </div>
+  <div class="field">
+    <%= f.label :handicap_card_number %><br>
+    <%= f.text_field :handicap_card_number %>
   </div>
   <div class="actions">
     <%= f.submit %>
