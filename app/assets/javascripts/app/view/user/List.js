@@ -3,7 +3,7 @@ Ext.define('AM.view.user.List' ,{
     alias : 'widget.userlist',
 
     title : 'All Users',
-
+    store: 'Users',
     initComponent: function() {
  /*       this.store = {
             fields: ['name', 'email'],
