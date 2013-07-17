@@ -3,6 +3,7 @@ Rails4version::Application.routes.draw do
 
   get "page/index"
   get "page/user"
+  get "page/patient"
 
   root 'page#index'
   # The priority is based upon order of creation: first created -> highest priority.

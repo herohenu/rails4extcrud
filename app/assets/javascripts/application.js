@@ -18,13 +18,19 @@
 // require pageindex
 
 //= require app/model/User
-// require  app/data/users.json                              l
+//= require app/model/Patient
+
 //= require app/store/Users
+//= require app/store/patients
 
 //= require app/view/user/List
+//= require app/view/patient/List
+
 //= require app/view/user/Edit
+//= require app/view/patient/Edit
 
 //= require app/controller/users
+//= require app/controller/patients
 
 //= require app/app
 

@@ -6,14 +6,16 @@ Ext.application({
 
     appFolder: 'app',
     controllers: [
-        'Users'
+        //'Users'
+        'Patients'
     ],
     launch: function() {
         Ext.create('Ext.container.Viewport', {
             layout: 'fit',
             items: [
                 {
-                    xtype: 'userlist'
+                    //xtype: 'userlist'
+                    xtype: 'patientlist'
                 }
             ]
         });
