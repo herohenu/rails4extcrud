@@ -1,0 +1,87 @@
+<h1>Listing patients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Patient ids</th>
+      <th>Spell code</th>
+      <th>Name</th>
+      <th>Social security number</th>
+      <th>Sex</th>
+      <th>Birthday</th>
+      <th>Residence</th>
+      <th>Nationality</th>
+      <th>Citizenship</th>
+      <th>Photo</th>
+      <th>Education</th>
+      <th>Household</th>
+      <th>Occupation</th>
+      <th>Orgnization</th>
+      <th>Orgnization address</th>
+      <th>Mobile phone</th>
+      <th>Home phone</th>
+      <th>Home address</th>
+      <th>Contact</th>
+      <th>Contact phone</th>
+      <th>Habitual type</th>
+      <th>Marital status</th>
+      <th>Insurance type</th>
+      <th>Insurance number</th>
+      <th>Blood type</th>
+      <th>Allergy history</th>
+      <th>Vaccination history</th>
+      <th>Disease history</th>
+      <th>Heredopathia history</th>
+      <th>Health risk factor</th>
+      <th>Is handicapped</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.patient_ids %></td>
+        <td><%= patient.spell_code %></td>
+        <td><%= patient.name %></td>
+        <td><%= patient.social_security_number %></td>
+        <td><%= patient.sex %></td>
+        <td><%= patient.birthday %></td>
+        <td><%= patient.residence %></td>
+        <td><%= patient.nationality %></td>
+        <td><%= patient.citizenship %></td>
+        <td><%= patient.photo %></td>
+        <td><%= patient.education %></td>
+        <td><%= patient.household %></td>
+        <td><%= patient.occupation %></td>
+        <td><%= patient.orgnization %></td>
+        <td><%= patient.orgnization_address %></td>
+        <td><%= patient.mobile_phone %></td>
+        <td><%= patient.home_phone %></td>
+        <td><%= patient.home_address %></td>
+        <td><%= patient.contact %></td>
+        <td><%= patient.contact_phone %></td>
+        <td><%= patient.habitual_type %></td>
+        <td><%= patient.marital_status %></td>
+        <td><%= patient.insurance_type %></td>
+        <td><%= patient.insurance_number %></td>
+        <td><%= patient.blood_type %></td>
+        <td><%= patient.allergy_history %></td>
+        <td><%= patient.vaccination_history %></td>
+        <td><%= patient.disease_history %></td>
+        <td><%= patient.heredopathia_history %></td>
+        <td><%= patient.health_risk_factor %></td>
+        <td><%= patient.is_handicapped %></td>
+        <td><%= link_to 'Show', patient %></td>
+        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Patient', new_patient_path %>

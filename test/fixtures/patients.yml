@@ -1,0 +1,67 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  patient_ids: MyString
+  spell_code: MyString
+  name: MyString
+  social_security_number: MyString
+  sex: MyString
+  birthday: 2013-07-17
+  residence: MyString
+  nationality: MyString
+  citizenship: MyString
+  photo: MyString
+  education: MyString
+  household: MyString
+  occupation: MyString
+  orgnization: MyString
+  orgnization_address: MyString
+  mobile_phone: MyString
+  home_phone: MyString
+  home_address: MyString
+  contact: MyString
+  contact_phone: MyString
+  habitual_type: MyString
+  marital_status: MyString
+  insurance_type: MyString
+  insurance_number: MyString
+  blood_type: MyString
+  allergy_history: MyString
+  vaccination_history: MyString
+  disease_history: MyString
+  heredopathia_history: MyString
+  health_risk_factor: MyString
+  is_handicapped: 
+
+two:
+  patient_ids: MyString
+  spell_code: MyString
+  name: MyString
+  social_security_number: MyString
+  sex: MyString
+  birthday: 2013-07-17
+  residence: MyString
+  nationality: MyString
+  citizenship: MyString
+  photo: MyString
+  education: MyString
+  household: MyString
+  occupation: MyString
+  orgnization: MyString
+  orgnization_address: MyString
+  mobile_phone: MyString
+  home_phone: MyString
+  home_address: MyString
+  contact: MyString
+  contact_phone: MyString
+  habitual_type: MyString
+  marital_status: MyString
+  insurance_type: MyString
+  insurance_number: MyString
+  blood_type: MyString
+  allergy_history: MyString
+  vaccination_history: MyString
+  disease_history: MyString
+  heredopathia_history: MyString
+  health_risk_factor: MyString
+  is_handicapped: 

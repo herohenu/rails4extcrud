@@ -13,4 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require turbolinks
+//= require extjs4/ext-all
+// require pageindex
+
+//= require app/model/User
+// require  app/data/users.json
+//= require app/store/Users
+
+//= require app/view/user/List
+//= require app/view/user/Edit
+
+//= require app/controller/users
+
+//= require app/app
+
+
+// require_tree .

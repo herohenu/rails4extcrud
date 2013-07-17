@@ -1,0 +1,141 @@
+<%= form_for(@patient) do |f| %>
+  <% if @patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% @patient.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :patient_ids %><br>
+    <%= f.text_field :patient_ids %>
+  </div>
+  <div class="field">
+    <%= f.label :spell_code %><br>
+    <%= f.text_field :spell_code %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :social_security_number %><br>
+    <%= f.text_field :social_security_number %>
+  </div>
+  <div class="field">
+    <%= f.label :sex %><br>
+    <%= f.text_field :sex %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br>
+    <%= f.date_select :birthday %>
+  </div>
+  <div class="field">
+    <%= f.label :residence %><br>
+    <%= f.text_field :residence %>
+  </div>
+  <div class="field">
+    <%= f.label :nationality %><br>
+    <%= f.text_field :nationality %>
+  </div>
+  <div class="field">
+    <%= f.label :citizenship %><br>
+    <%= f.text_field :citizenship %>
+  </div>
+  <div class="field">
+    <%= f.label :photo %><br>
+    <%= f.text_field :photo %>
+  </div>
+  <div class="field">
+    <%= f.label :education %><br>
+    <%= f.text_field :education %>
+  </div>
+  <div class="field">
+    <%= f.label :household %><br>
+    <%= f.text_field :household %>
+  </div>
+  <div class="field">
+    <%= f.label :occupation %><br>
+    <%= f.text_field :occupation %>
+  </div>
+  <div class="field">
+    <%= f.label :orgnization %><br>
+    <%= f.text_field :orgnization %>
+  </div>
+  <div class="field">
+    <%= f.label :orgnization_address %><br>
+    <%= f.text_field :orgnization_address %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile_phone %><br>
+    <%= f.text_field :mobile_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :home_phone %><br>
+    <%= f.text_field :home_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :home_address %><br>
+    <%= f.text_field :home_address %>
+  </div>
+  <div class="field">
+    <%= f.label :contact %><br>
+    <%= f.text_field :contact %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_phone %><br>
+    <%= f.text_field :contact_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :habitual_type %><br>
+    <%= f.text_field :habitual_type %>
+  </div>
+  <div class="field">
+    <%= f.label :marital_status %><br>
+    <%= f.text_field :marital_status %>
+  </div>
+  <div class="field">
+    <%= f.label :insurance_type %><br>
+    <%= f.text_field :insurance_type %>
+  </div>
+  <div class="field">
+    <%= f.label :insurance_number %><br>
+    <%= f.text_field :insurance_number %>
+  </div>
+  <div class="field">
+    <%= f.label :blood_type %><br>
+    <%= f.text_field :blood_type %>
+  </div>
+  <div class="field">
+    <%= f.label :allergy_history %><br>
+    <%= f.text_field :allergy_history %>
+  </div>
+  <div class="field">
+    <%= f.label :vaccination_history %><br>
+    <%= f.text_field :vaccination_history %>
+  </div>
+  <div class="field">
+    <%= f.label :disease_history %><br>
+    <%= f.text_field :disease_history %>
+  </div>
+  <div class="field">
+    <%= f.label :heredopathia_history %><br>
+    <%= f.text_field :heredopathia_history %>
+  </div>
+  <div class="field">
+    <%= f.label :health_risk_factor %><br>
+    <%= f.text_field :health_risk_factor %>
+  </div>
+  <div class="field">
+    <%= f.label :is_handicapped %><br>
+    <%= f.text_field :is_handicapped %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
