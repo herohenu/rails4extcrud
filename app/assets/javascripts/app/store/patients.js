@@ -6,7 +6,7 @@ Ext.define('AM.store.Patients', {
     proxy: {
         type: 'ajax',
         api: {
-            read: 'page/patient.json'//,
+            read: 'patients.json'//,
            // update: 'data/updateUsers.json'
         },
         reader: {

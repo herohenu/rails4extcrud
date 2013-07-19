@@ -17,7 +17,7 @@
                   render: this.onPanelRendered
                   },*/
                  'patientlist': {
-                     itemdblclick: this.editPatient
+                     itemdblclick: this.addPatient
 
                  },
                  'patientedit button[action=save]': {
@@ -38,6 +38,15 @@
              var view = Ext.widget('patientedit');
              view.down('form').loadRecord(record);
 
+
+         },
+
+
+         addPatient: function() {
+             //  console.log('Double clicked on ' + record.get('name'));
+             var view = Ext.widget('patientadd');
+             //view.down('form').loadRecord(record);
+              view.show();
 
          },
 

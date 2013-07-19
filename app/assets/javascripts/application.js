@@ -29,6 +29,10 @@
 //= require app/view/user/Edit
 //= require app/view/patient/Edit
 
+
+
+//= require app/view/patient/Add
+
 //= require app/controller/users
 //= require app/controller/patients
 

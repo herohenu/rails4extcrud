@@ -13,6 +13,12 @@ Ext.define('AM.view.patient.List' ,{
         dock: 'bottom',
         displayInfo: true
     }] ,
+    tbar: [
+       // { xtype: 'button', text: '添加患者',iconUrl:"" }
+     /*  {text:'封堵验证',handler:'',iconCls:'block'}
+        ,'-',*/
+        {text:'刷新',iconCls:'add'        }
+    ],
     initComponent: function() {
         /*       this.store = {
          fields: ['name', 'email'],
