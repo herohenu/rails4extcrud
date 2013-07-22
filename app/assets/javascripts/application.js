@@ -28,6 +28,7 @@
 
 //= require app/view/user/Edit
 //= require app/view/patient/Edit
+//= require app/view/patient/Form
 
 
 

@@ -74,8 +74,8 @@ Ext.define('AM.view.patient.Add', {
                         });
                     }
                 }
-            }],
-            renderTo: Ext.getBody()
+            }]//,
+            //renderTo: Ext.getBody()
         });
 
 

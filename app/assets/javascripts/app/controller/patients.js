@@ -1,114 +1,100 @@
      Ext.define('AM.controller.Patients', {
          extend: 'Ext.app.Controller',
 
-         views: [
-             //'user.List'
-             'patient.List'
-         ],
-
-         stores: [
-             'Patients'
-         ],
          models: ['Patient'],
+         stores: ['Patients'],
+         views: [
+             'patient.List',
+             'patient.Form'
+         ],
+         refs: [{
+             ref: 'list',
+             selector: 'patientlist'
+         }],
 
          init: function() {
              this.control({
-                 /*  'viewport > panel': {
-                  render: this.onPanelRendered
-                  },*/
                  'patientlist': {
-                     itemdblclick: this.updatePatient
-
+                     itemdblclick: this.editPatient,
+                     selectionchange: this.selectionChange
                  },
-                 ' patientadd  button[action=save]': {
-//                     click: this.updatePatient
-                     click: this.createOrUpdateUser
-                 }
-
-
-/*                 ,
+                 ' patientform  button[action=savepatient]': {
+                     click: this.createOrUpdatePatient
+                 },
                  'button[action=addPatient]': {
-                     click: this.addUser
-                 }*/
-
-
+                     click: this.addPatient
+                 },
+                 'button[action=editPatient]': {
+                     click: this.editPatient
+                 },
+                 'button[action=deletePatient]': {
+                     click: this.deletePatient
+                 }
              });
          },
 
-         /*onPanelRendered: function() {
-          console.log('The panel was rendered');
-          }*/
-
-/*         editPatient: function(grid, record) {
-           //  console.log('Double clicked on ' + record.get('name'));
-             var view = Ext.widget('patientedit');
-             view.down('form').loadRecord(record);
-
-
-         },*/
-
-
          addPatient: function() {
-             var view = Ext.widget('patientadd');
+             var view = Ext.widget('patientform');
              view.show();
-
+            // alert("点击了添加按钮  船体弹出");
          },
 
-/*         updatePatient: function(button) {
-             // console.log('clicked the Save button');
-             var win    = button.up('window'),
-                 form   = win.down('form'),
-                 record = form.getRecord(),
-                 values = form.getValues();
+         editPatient: function(button) {
+              console.log('clicked the edit  patient');
 
-             record.set(values);
-             win.close();
-         },*/
 
-/*         deletePatient: function (){
-           var  grid  = this.getPatientlist(),
+             var record = this.getList().getSelectedPatient();
+             var view = Ext.widget('patientform');
+             view.down('form').loadRecord(record);
+         },
+
+         deletePatient: function (){
+       /*    var  grid  = this.getPatientlist(),
                 record = grid.getSelectionModel().getSelection(),
                 store  = this.getPatientsStore;
 
                 store.remove(record),
-                    this.getPatientsStore.sync();
+                    this.getPatientsStore.sync();*/
+             var record = this.getList().getSelectedPatient();
 
+             if (record) {
+                 var store = this.getPatientsStore();
+                 store.remove(record);
+                 console.log("删除记录的  data id：  " +record.data);
+                 store.sync();
+
+             }
 
          },
-         */
 
-         createOrUpdateUser:function(button){
-             console.log("点击了保存按钮");
+         createOrUpdatePatient:function(button){
+         console.log("点击了save   save按钮");
 
-            //  alert(1);
            var win = button.up('window');
-             var form = win.down('form');
+           var form = win.down('form');
 
-             //var store = this.getUsersStore();
-             var store = this.getPatientsStore();
-             var values = form.getValues();
+           //var store = this.getUsersStore();
+           var store = this.getPatientsStore();
+           var values = form.getValues();
 
-//             var user = Ext.create('AM.model.User', values);
-             var patient = Ext.create('AM.model.Patient', values);
-
-
-
-
-             var errors = patient.validate();
+           var patient = Ext.create('AM.model.Patient', values);
+           var errors = patient.validate();
 
              if (errors.isValid()) {
                  var formRecord = form.getRecord();
 
                  if (formRecord) {
                      // perform update
-                     console.log(" form record set values ");
-                     //la
+                     console.log(" 调用了更新,重新set value ");
 
                      formRecord.set(values);
                  } else {
                      // perform create
                      //store.add(user);
+                     console.log(" 调用了添加, grid 中添加 value ");
                      store.add(patient);
+                   //  patient.save();
+                     console.log(" 执行了store save 记录 ");
                  }
 
                  store.sync({
@@ -116,19 +102,30 @@
                          win.close();
                      },
                      failure: function(batch, options) {
+                        console.log("  添加失败了");
                          // extract server side validation errors
                          var serverSideValidationErrors = batch.exceptions[0].error;
 
                          var errors = new Ext.data.Errors();
                          for (var field in serverSideValidationErrors) {
-                             var message = serverSideValidationErrors[field].join(", ");
-                             errors.add(undefined, { field: field, message: message });
+                           //  var message = serverSideValidationErrors[field].join(", ");
+                             //errors.add(undefined, { field: field, message: message });
                          }
                          form.getForm().markInvalid(errors);
                      }
                  });
              } else {
                  form.getForm().markInvalid(errors);
+             }
+         },
+
+         selectionChange: function(selectionModel, selections) {
+             var grid = this.getList();
+
+             if (selections.length > 0) {
+                 grid.enableRecordButtons();
+             } else {
+                 grid.disableRecordButtons();
              }
          }
 

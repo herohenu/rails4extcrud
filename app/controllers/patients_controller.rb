@@ -1,10 +1,18 @@
 class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
-
+  protect_from_forgery :except => :index
+  skip_before_filter :verify_authenticity_token
+  respond_to :js
   # GET /patients
   # GET /patients.json
   def index
     @patients = Patient.all
+    respond_with(@patients) do |format|
+      format.json {render  :json =>@patients ,:id =>true }
+      #format.as_json(include: :id)
+    end
+
+
   end
 
   # GET /patients/1
@@ -24,6 +32,9 @@ class PatientsController < ApplicationController
   # POST /patients
   # POST /patients.json
   def create
+     puts "-------------------------------------------------"
+     puts patient_params
+     puts "-------------------------------------------------"
 
     @patient = Patient.new(patient_params)
 
@@ -31,9 +42,11 @@ class PatientsController < ApplicationController
       if @patient.save
         #format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
         format.json { render action: 'show', status: :created, location: @patient }
+        #format.json { render json: { success: true, data: "succ" } }
       else
         #format.html { render action: 'new' }
         format.json { render json: @patient.errors, status: :unprocessable_entity }
+        #format.json { render json: { success: false, errors: user.errors } }
       end
     end
   end
@@ -43,10 +56,10 @@ class PatientsController < ApplicationController
   def update
     respond_to do |format|
       if @patient.update(patient_params)
-        format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
+        #format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        #format.html { render action: 'edit' }
         format.json { render json: @patient.errors, status: :unprocessable_entity }
       end
     end
