@@ -14,10 +14,37 @@ Ext.define('AM.view.patient.List' ,{
         displayInfo: true
     }] ,
     tbar: [
-       // { xtype: 'button', text: '添加患者',iconUrl:"" }
-     /*  {text:'封堵验证',handler:'',iconCls:'block'}
-        ,'-',*/
-        {text:'刷新',iconCls:'add'        }
+        {
+            text : "添加",
+          //  iconCls : 'icon-add',
+//            icon-edit
+
+           // iconCls : 'Icon-Refresh',
+            handler : function() {
+
+               // mkWindow("new window",[addMenu(grid,pId)]); // 弹出新增栏目框
+                //alert("弹出添加窗口");
+
+                var view = Ext.widget('patientadd');
+                //创建patients 对象  new_patient_path	 GET	 /patients/new(.:format)	 patients#new
+                view.show();
+
+
+            }
+        } ,
+        {
+            text : "删除",
+            iconCls : 'icon-delete',
+            handler : function() {
+                //判断选中状态的记录  单选  或者多选
+                var grid = this.up('grid');
+                var secData = grid.getSelectionModel().getSelection(); // 获取到选择的记录
+
+
+            }
+        }
+
+
     ],
     initComponent: function() {
         /*       this.store = {
