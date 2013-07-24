@@ -37,7 +37,7 @@
 //= require app/controller/users
 //= require app/controller/patients
 
-//= require app/app
+//require app/app
 
 
 // require_tree .
