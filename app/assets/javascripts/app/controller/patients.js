@@ -62,6 +62,7 @@
                  store.remove(record);
                  console.log("删除记录的  data id：  " +record.data);
                  store.sync();
+                 store.reload();
 
              }
 
@@ -114,6 +115,7 @@
                          form.getForm().markInvalid(errors);
                      }
                  });
+                 store.reload();
              } else {
                  form.getForm().markInvalid(errors);
              }
