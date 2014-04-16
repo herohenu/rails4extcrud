@@ -1,4 +1,8 @@
 Rails4version::Application.routes.draw do
+  resources :doctors
+
+  resources :departments
+
   resources :patients
 
   get "page/index"
