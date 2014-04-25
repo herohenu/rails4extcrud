@@ -36,7 +36,6 @@
          addPatient: function() {
              var view = Ext.widget('patientform');
              view.show();
-            // alert("点击了添加按钮  船体弹出");
          },
 
          editPatient: function(button) {
@@ -86,6 +85,7 @@
 
                  if (formRecord) {
                      // perform update
+                     form.dirty = true;
                      console.log(" 调用了更新,重新set value ");
 
                      formRecord.set(values);
