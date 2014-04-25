@@ -10,16 +10,12 @@ Ext.application({
     ],
     launch: function() {
         Ext.create('Ext.container.Viewport', {
-            layout: 'border',
-            items: [ { region: "west", width:90, title: 'north', collapsible: true },
-                { region: "east", width: 90, title: 'north', collapsible: true },
-                { region: "center", split: true, border: true, collapsible: true,title:'center',
-                    items:[
-                        {xtype:'homePage'}
-                    ]
-                }
-
+//            layout: 'border',
+            layout: 'fit',
+            items: [
+                {xtype: 'patientlist'}
             ]
+
         });
     }
 });
